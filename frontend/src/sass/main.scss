@@ -1,0 +1,282 @@
+@use "./pages/Home.scss" as *;
+@use "./pages/Check.scss" as *;
+@use "./pages/CalculatorCheck.scss" as *;
+@use "./pages/ResultsCheck.scss" as *;
+@use "./pages/Articles.scss" as *;
+@use "./pages/ArticleDetails.scss" as *;
+@use "./pages/Consultation.scss" as *;
+@use "./pages/About.scss" as *;
+@use "./pages/Login.scss" as *;
+@use "./pages/Signup.scss" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-bar {
+  padding: 8px 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-bar__menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+  height: 44px;
+  width: 44px;
+}
+
+.app-bar__logo {
+  flex: none;
+  text-align: left;
+  margin-right: auto;
+}
+
+.app-bar__logo img {
+  width: 80px;
+  max-width: 150px;
+  display: block;
+}
+
+.app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: white;
+  overflow: hidden;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar__navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.app-bar__navigation ul li a:hover {
+  color: #3d7069;
+}
+
+.app-bar__navigation ul li a.active {
+  color: #3d7069;
+  border-bottom: 3px solid #3d7069;
+  font-weight: bold;
+}
+
+.app-bar__profile {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.app-bar__profile a {
+  color: #3d7069;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 8px 12px;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown a i {
+  margin-left: 8px;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+  color: #3d7069;
+}
+
+.app-bar__profile.active .dropdown {
+  display: block;
+}
+
+main {
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+#main-footer {
+  background-color: #3d7069;
+  color: white;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section-nutri,
+.footer-section-support,
+.footer-section-social {
+  flex: 1;
+}
+
+.footer-section-nutri {
+  text-align: left;
+}
+
+.footer-section-support {
+  text-align: center;
+}
+
+.footer-section-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-section-nutri h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.footer-section-support h3,
+.footer-section-social h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section-nutri p {
+  line-height: 1.8;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.footer-section-support ul,
+.footer-section-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section-support ul li,
+.footer-section-social ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section-support ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section-social ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3d7069;
+}
+
+.footer-section-support ul li a:hover,
+.footer-section-social ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-section-social .social-links ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-section-social .social-links ul li a {
+  font-size: 18px;
+}
+
+.footer-section-social .social-links ul li a i {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  border-top: 1px solid #ffffff44;
+  padding-top: 15px;
+}

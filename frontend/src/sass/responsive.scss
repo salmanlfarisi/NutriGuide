@@ -1,0 +1,124 @@
+@media screen and (min-width: 768px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .app-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .app-bar .app-bar__logo {
+    grid-column: 2;
+    text-align: center;
+  }
+
+  .app-bar .app-bar__menu {
+    display: block;
+  }
+
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 96px;
+    left: -100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-color: white;
+    z-index: 99;
+    overflow: hidden;
+  }
+
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+  }
+
+  .app-bar .app-bar__navigation ul {
+    display: block;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: block;
+    text-align: left;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    padding: 10px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section-nutri,
+  .footer-section-support,
+  .footer-section-social {
+    flex: unset;
+    margin-bottom: 20px;
+  }
+
+  .footer-section-nutri p,
+  .footer-section-nutri h3 {
+    text-align: center;
+  }
+
+  .footer-section-social .social-links ul {
+    flex-direction: row;
+  }
+
+  .footer-section-social ul li a {
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 430px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section-nutri,
+  .footer-section-support,
+  .footer-section-social {
+    flex: unset;
+    margin-bottom: 20px;
+  }
+
+  .footer-section-social .social-links ul {
+    flex-direction: row;
+  }
+
+  .footer-section-social ul li a {
+    margin: 0 5px;
+  }
+}
